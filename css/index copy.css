@@ -1,3 +1,4 @@
+/* 原始悬停效果 */
 .content:hover .content-l h2,
 .content:hover .content-l span {
     transform: translate(-180px, 10px);
@@ -7,7 +8,6 @@
 .content:hover .content-l span {
     font: 400 25px 'Gochi Hand';
     line-height: 1.5;
-    
 }
 
 .content:hover button {
@@ -24,7 +24,6 @@
     left: 57%;
     top: 50%;
     border: 23px #ffffff dashed;
-
 }
 
 .content:hover::before {
@@ -55,10 +54,32 @@
     width: 100%;
     height: 100%;
     box-shadow: none;
-
 }
 
 .content:hover .img {
     padding: 10px;
     transform: scale(1);
+}
+
+/* 媒体查询，为小屏幕设备定义样式 */
+@media (max-width: 768px) {
+    .content:hover .content-l h2,
+    .content:hover .content-l span,
+    .content:hover button,
+    .content:hover .circle,
+    .content:hover::before,
+    .content:hover::after,
+    .content:hover .content-l img,
+    .content:hover .content-r,
+    .content:hover .content-l,
+    .content:hover .img img,
+    .content:hover .img {
+        /* 在小屏幕设备上，移除悬停效果 */
+        transform: none !important;
+        width: auto !important;
+        height: auto !important;
+        opacity: 1 !important;
+        background-position-x: 0 !important;
+        box-shadow: none !important;
+    }
 }
